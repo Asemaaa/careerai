@@ -1,0 +1,110 @@
+[
+  {
+    "id": "software-engineer",
+    "title": "Software Engineer",
+    "shortDescription": "Build scalable applications, APIs, and platforms that power modern products.",
+    "demand": "high",
+    "salaryMin": 72000,
+    "salaryMax": 145000,
+    "currency": "USD",
+    "skills": ["Problem solving", "JavaScript/TypeScript", "System design", "Collaboration", "Testing"],
+    "growth": "Strong long-term demand with paths into senior engineering, architecture, or technical leadership.",
+    "roadmap": [
+      { "phase": "0–6 months", "items": ["CS fundamentals", "Git & GitHub", "One full-stack project"] },
+      { "phase": "6–18 months", "items": ["Data structures", "Cloud basics (AWS/GCP)", "Code reviews & mentorship"] },
+      { "phase": "18+ months", "items": ["System design", "Ownership of services", "Cross-team initiatives"] }
+    ],
+    "courses": ["Harvard CS50 (free)", "The Odin Project", "AWS Cloud Practitioner"],
+    "tags": ["tech", "analytical", "engineering"]
+  },
+  {
+    "id": "product-designer",
+    "title": "Product Designer (UX/UI)",
+    "shortDescription": "Shape intuitive interfaces through research, prototyping, and visual systems.",
+    "demand": "high",
+    "salaryMin": 65000,
+    "salaryMax": 125000,
+    "currency": "USD",
+    "skills": ["User research", "Figma", "Interaction design", "Storytelling", "Accessibility"],
+    "growth": "Design leadership (Staff/Principal) or specialized roles in design systems and product strategy.",
+    "roadmap": [
+      { "phase": "0–6 months", "items": ["UI foundations", "Rebuild 3 popular apps in Figma", "Micro-copy practice"] },
+      { "phase": "6–18 months", "items": ["Usability testing", "Design systems", "Portfolio case studies"] },
+      { "phase": "18+ months", "items": ["Cross-functional leadership", "Metrics-informed design", "Mentoring juniors"] }
+    ],
+    "courses": ["Google UX Certificate", "Shift Nudge (visual craft)", "NN/g UX webinars"],
+    "tags": ["creative", "design", "people"]
+  },
+  {
+    "id": "data-analyst",
+    "title": "Data Analyst",
+    "shortDescription": "Turn raw data into decisions dashboards, experiments, and narratives stakeholders trust.",
+    "demand": "medium",
+    "salaryMin": 58000,
+    "salaryMax": 105000,
+    "currency": "USD",
+    "skills": ["SQL", "Spreadsheets", "Statistics", "Visualization", "Stakeholder communication"],
+    "growth": "Progress toward analytics engineering, data science, or business operations strategy.",
+    "roadmap": [
+      { "phase": "0–6 months", "items": ["SQL daily practice", "KPI thinking", "Dashboards in BI tools"] },
+      { "phase": "6–18 months", "items": ["A/B testing", "Python for analysis", "Executive storytelling"] },
+      { "phase": "18+ months", "items": ["Metric ownership", "Forecasting", "Cross-org partnerships"] }
+    ],
+    "courses": ["Mode SQL Tutorial", "Kaggle Learn", "Storytelling With Data"],
+    "tags": ["analytical", "business", "tech"]
+  },
+  {
+    "id": "marketing-manager",
+    "title": "Growth Marketing Manager",
+    "shortDescription": "Blend creativity and analytics to acquire users and grow revenue sustainably.",
+    "demand": "medium",
+    "salaryMin": 62000,
+    "salaryMax": 118000,
+    "currency": "USD",
+    "skills": ["Campaign strategy", "Copywriting", "Experimentation", "Analytics", "Brand positioning"],
+    "growth": "Head of Growth, CMO track in startups, or specialized demand-gen leadership.",
+    "roadmap": [
+      { "phase": "0–6 months", "items": ["Ads platforms basics", "Landing page critiques", "Attribution concepts"] },
+      { "phase": "6–18 months", "items": ["Lifecycle email", "Cohort analysis", "SEO fundamentals"] },
+      { "phase": "18+ months", "items": ["Budget ownership", "Channel strategy", "Hiring & mentoring"] }
+    ],
+    "courses": ["Reforge Growth Series", "HubSpot Academy", "Lenny's Newsletter (product growth)"],
+    "tags": ["business", "creative", "people"]
+  },
+  {
+    "id": "civil-engineer",
+    "title": "Civil Engineer",
+    "shortDescription": "Design and oversee infrastructure projects from transit to sustainable cities.",
+    "demand": "medium",
+    "salaryMin": 68000,
+    "salaryMax": 120000,
+    "currency": "USD",
+    "skills": ["CAD/BIM", "Structural analysis", "Project management", "Regulations", "Safety mindset"],
+    "growth": "PE licensure, project management, or technical specialist roles in sustainability.",
+    "roadmap": [
+      { "phase": "0–6 months", "items": ["Statics & materials refresh", "CAD proficiency", "Site visits"] },
+      { "phase": "6–18 months", "items": ["FE exam prep", "Cost estimating", "Stakeholder coordination"] },
+      { "phase": "18+ months", "items": ["PE track", "Design lead", "Large program delivery"] }
+    ],
+    "courses": ["FE Civil Review (School of PE)", "Autodesk Learning", "ASCE webinars"],
+    "tags": ["engineering", "analytical", "practical"]
+  },
+  {
+    "id": "nurse-practitioner",
+    "title": "Nurse Practitioner",
+    "shortDescription": "Deliver advanced clinical care with autonomy in many healthcare settings.",
+    "demand": "high",
+    "salaryMin": 95000,
+    "salaryMax": 140000,
+    "currency": "USD",
+    "skills": ["Clinical assessment", "Patient education", "Evidence-based practice", "Empathy", "Documentation"],
+    "growth": "Specialization (e.g., family, acute care), leadership, or academic teaching paths.",
+    "roadmap": [
+      { "phase": "0–6 months", "items": ["RN foundation", "Shadowing", "Health systems literacy"] },
+      { "phase": "6–18 months", "items": ["NP program coursework", "Clinical rotations", "Board prep"] },
+      { "phase": "18+ months", "items": ["Independent practice readiness", "Quality improvement", "Mentorship"] }
+    ],
+    "courses": ["AACN resources", "Board review courses", "Local hospital residency programs"],
+    "tags": ["people", "practical", "analytical"]
+  }
+]

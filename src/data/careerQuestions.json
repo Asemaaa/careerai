@@ -1,0 +1,52 @@
+[
+  {
+    "id": "q1",
+    "question": "What kind of problems do you enjoy solving the most?",
+    "options": [
+      { "id": "a", "label": "Logical puzzles, algorithms, and systems", "tags": ["tech", "analytical"] },
+      { "id": "b", "label": "People dynamics, communication, and motivation", "tags": ["people", "business"] },
+      { "id": "c", "label": "Visual stories, aesthetics, and brand feel", "tags": ["creative", "design"] },
+      { "id": "d", "label": "Hands-on building, fixing, and optimizing things", "tags": ["engineering", "practical"] }
+    ]
+  },
+  {
+    "id": "q2",
+    "question": "In a team project, you naturally gravitate toward…",
+    "options": [
+      { "id": "a", "label": "Owning the roadmap and keeping everyone aligned", "tags": ["business", "people"] },
+      { "id": "b", "label": "Researching deeply and validating assumptions", "tags": ["analytical", "tech"] },
+      { "id": "c", "label": "Crafting the experience users will remember", "tags": ["creative", "design"] },
+      { "id": "d", "label": "Making sure the final output is reliable and polished", "tags": ["engineering", "practical"] }
+    ]
+  },
+  {
+    "id": "q3",
+    "question": "Which learning style fits you best?",
+    "options": [
+      { "id": "a", "label": "Structured courses with clear milestones", "tags": ["analytical", "tech"] },
+      { "id": "b", "label": "Learning by doing with fast feedback loops", "tags": ["engineering", "creative"] },
+      { "id": "c", "label": "Mentorship, shadowing, and real conversations", "tags": ["people", "business"] },
+      { "id": "d", "label": "Exploring trends and experimenting freely", "tags": ["creative", "design"] }
+    ]
+  },
+  {
+    "id": "q4",
+    "question": "Pick a workspace vibe that energizes you:",
+    "options": [
+      { "id": "a", "label": "Quiet focus with headphones and deep work", "tags": ["tech", "analytical"] },
+      { "id": "b", "label": "Collaborative whiteboards and brainstorms", "tags": ["people", "creative"] },
+      { "id": "c", "label": "Fast-paced deadlines with visible impact", "tags": ["business", "engineering"] },
+      { "id": "d", "label": "Studio-like space with prototypes everywhere", "tags": ["design", "creative"] }
+    ]
+  },
+  {
+    "id": "q5",
+    "question": "Two years from now, what outcome would make you proud?",
+    "options": [
+      { "id": "a", "label": "Shipping products used by thousands of people", "tags": ["tech", "engineering"] },
+      { "id": "b", "label": "Leading initiatives that move metrics", "tags": ["business", "analytical"] },
+      { "id": "c", "label": "Winning awards or recognition for craft", "tags": ["design", "creative"] },
+      { "id": "d", "label": "Helping others grow through coaching or community", "tags": ["people", "business"] }
+    ]
+  }
+]

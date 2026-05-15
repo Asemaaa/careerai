@@ -1,0 +1,54 @@
+[
+  {
+    "cityId": "nyc",
+    "cityName": "New York City",
+    "currency": "USD",
+    "items": [
+      { "professionId": "software-engineer", "demand": "high", "salaryMin": 95000, "salaryMax": 185000 },
+      { "professionId": "product-designer", "demand": "high", "salaryMin": 88000, "salaryMax": 155000 },
+      { "professionId": "data-analyst", "demand": "high", "salaryMin": 78000, "salaryMax": 128000 },
+      { "professionId": "marketing-manager", "demand": "medium", "salaryMin": 82000, "salaryMax": 138000 },
+      { "professionId": "civil-engineer", "demand": "medium", "salaryMin": 86000, "salaryMax": 132000 },
+      { "professionId": "nurse-practitioner", "demand": "high", "salaryMin": 118000, "salaryMax": 168000 }
+    ]
+  },
+  {
+    "cityId": "austin",
+    "cityName": "Austin",
+    "currency": "USD",
+    "items": [
+      { "professionId": "software-engineer", "demand": "high", "salaryMin": 92000, "salaryMax": 165000 },
+      { "professionId": "product-designer", "demand": "high", "salaryMin": 82000, "salaryMax": 138000 },
+      { "professionId": "data-analyst", "demand": "medium", "salaryMin": 72000, "salaryMax": 115000 },
+      { "professionId": "marketing-manager", "demand": "medium", "salaryMin": 76000, "salaryMax": 124000 },
+      { "professionId": "civil-engineer", "demand": "medium", "salaryMin": 78000, "salaryMax": 118000 },
+      { "professionId": "nurse-practitioner", "demand": "high", "salaryMin": 108000, "salaryMax": 148000 }
+    ]
+  },
+  {
+    "cityId": "berlin",
+    "cityName": "Berlin",
+    "currency": "EUR",
+    "items": [
+      { "professionId": "software-engineer", "demand": "high", "salaryMin": 62000, "salaryMax": 98000 },
+      { "professionId": "product-designer", "demand": "medium", "salaryMin": 52000, "salaryMax": 82000 },
+      { "professionId": "data-analyst", "demand": "medium", "salaryMin": 48000, "salaryMax": 76000 },
+      { "professionId": "marketing-manager", "demand": "medium", "salaryMin": 50000, "salaryMax": 82000 },
+      { "professionId": "civil-engineer", "demand": "low", "salaryMin": 52000, "salaryMax": 78000 },
+      { "professionId": "nurse-practitioner", "demand": "high", "salaryMin": 65000, "salaryMax": 92000 }
+    ]
+  },
+  {
+    "cityId": "toronto",
+    "cityName": "Toronto",
+    "currency": "CAD",
+    "items": [
+      { "professionId": "software-engineer", "demand": "high", "salaryMin": 78000, "salaryMax": 138000 },
+      { "professionId": "product-designer", "demand": "medium", "salaryMin": 68000, "salaryMax": 118000 },
+      { "professionId": "data-analyst", "demand": "medium", "salaryMin": 62000, "salaryMax": 102000 },
+      { "professionId": "marketing-manager", "demand": "medium", "salaryMin": 64000, "salaryMax": 108000 },
+      { "professionId": "civil-engineer", "demand": "medium", "salaryMin": 70000, "salaryMax": 112000 },
+      { "professionId": "nurse-practitioner", "demand": "high", "salaryMin": 95000, "salaryMax": 132000 }
+    ]
+  }
+]

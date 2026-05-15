@@ -1,0 +1,34 @@
+[
+  {
+    "id": "tour-se",
+    "professionId": "software-engineer",
+    "title": "Day in the life: Software Engineer",
+    "duration": "12 min",
+    "imageHint": "terminal",
+    "description": "Follow a sprint day from standup to shipping a feature behind a feature flag."
+  },
+  {
+    "id": "tour-design",
+    "professionId": "product-designer",
+    "title": "Inside a design critique",
+    "duration": "9 min",
+    "imageHint": "canvas",
+    "description": "See how designers balance user needs, business goals, and engineering constraints."
+  },
+  {
+    "id": "tour-data",
+    "professionId": "data-analyst",
+    "title": "From messy spreadsheet to exec-ready insight",
+    "duration": "11 min",
+    "imageHint": "charts",
+    "description": "Walk through cleaning data, sanity checks, and presenting a recommendation."
+  },
+  {
+    "id": "tour-growth",
+    "professionId": "marketing-manager",
+    "title": "Growth experiment teardown",
+    "duration": "8 min",
+    "imageHint": "campaign",
+    "description": "Explore a real A/B test plan, success metrics, and what to do when results are flat."
+  }
+]
