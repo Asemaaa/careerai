@@ -6,6 +6,7 @@ import cities from '../data/cities.json';
 import pricing from '../data/pricing.json';
 import weeklyProgram from '../data/weeklyProgram.json';
 import GlassCard from '../components/ui/GlassCard.jsx';
+import PageHeader from '../components/ui/PageHeader.jsx';
 import Button from '../components/ui/Button.jsx';
 import { formatKztSingle, getCityName, STORAGE_KEYS } from '../utils/careerEngine.js';
 
@@ -48,15 +49,15 @@ export default function BookingPage() {
 
   return (
     <div className="mx-auto max-w-4xl space-y-8">
-      <header>
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-indigo-300/90">Бронирование</p>
-        <h1 className="mt-2 font-display text-3xl font-semibold text-white sm:text-4xl">Запись на программу CareerAI</h1>
-        <p className="mt-2 text-sm text-slate-400">Выберите продукт, профиль и дату. Оплата — демо-интерфейс без реальных списаний.</p>
-      </header>
+      <PageHeader
+        eyebrow="Checkout"
+        title="Запись на программу"
+        subtitle="Выберите продукт, профиль и дату. Демо-оплата в тенге без реальных списаний."
+      />
 
       <div className="grid gap-6 lg:grid-cols-3">
         <GlassCard
-          className={`cursor-pointer border-2 transition ${product === 'guidance' ? 'border-indigo-400 bg-indigo-500/10' : 'border-transparent'}`}
+          className={`cursor-pointer !border-2 transition-all duration-300 ${product === 'guidance' ? '!border-sky-400/50 !bg-sky-500/10 !shadow-glow' : '!border-transparent'}`}
           onClick={() => setProduct('guidance')}
         >
           <p className="text-xs font-semibold uppercase text-slate-500">{pricing.careerGuidance.title}</p>
@@ -68,7 +69,7 @@ export default function BookingPage() {
           </ul>
         </GlassCard>
         <GlassCard
-          className={`cursor-pointer border-2 transition ${product === 'weekly' ? 'border-indigo-400 bg-indigo-500/10' : 'border-transparent'}`}
+          className={`cursor-pointer !border-2 transition-all duration-300 ${product === 'weekly' ? '!border-sky-400/50 !bg-sky-500/10 !shadow-glow' : '!border-transparent'}`}
           onClick={() => setProduct('weekly')}
         >
           <p className="text-xs font-semibold uppercase text-slate-500">Недельная программа</p>
@@ -76,7 +77,7 @@ export default function BookingPage() {
           <p className="mt-2 text-xs text-slate-400">7 профессий · 5 организаций · куратор</p>
         </GlassCard>
         <GlassCard
-          className={`cursor-pointer border-2 transition ${product === 'tour' ? 'border-indigo-400 bg-indigo-500/10' : 'border-transparent'}`}
+          className={`cursor-pointer !border-2 transition-all duration-300 ${product === 'tour' ? '!border-sky-400/50 !bg-sky-500/10 !shadow-glow' : '!border-transparent'}`}
           onClick={() => setProduct('tour')}
         >
           <p className="text-xs font-semibold uppercase text-slate-500">Однодневный тур</p>

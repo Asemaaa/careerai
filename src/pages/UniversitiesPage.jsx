@@ -4,6 +4,7 @@ import { X, MapPin, BookOpen, ExternalLink } from 'lucide-react';
 import universities from '../data/universities.json';
 import professions from '../data/professions.json';
 import GlassCard from '../components/ui/GlassCard.jsx';
+import PageHeader from '../components/ui/PageHeader.jsx';
 import Button from '../components/ui/Button.jsx';
 
 function UniVisual({ hint }) {
@@ -25,13 +26,11 @@ export default function UniversitiesPage() {
 
   return (
     <div className="space-y-10">
-      <header>
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-indigo-300/90">Образование</p>
-        <h1 className="mt-2 font-display text-3xl font-semibold text-white sm:text-4xl">Вузы Казахстана</h1>
-        <p className="mt-2 max-w-2xl text-sm text-slate-300 sm:text-base">
-          ЗКУ и ЗКАТУ в Уральске — якорные точки для ЗКО. Национальные вузы Алматы и Астаны — для магистратуры и STEM.
-        </p>
-      </header>
+      <PageHeader
+        eyebrow="Образование"
+        title="Вузы Казахстана"
+        subtitle="ЗКУ, ЗКАТУ, NU, КазНУ, Satbayev, SDU, КБТУ — специальности и связь с профессиями."
+      />
 
       <div className="grid gap-6 lg:grid-cols-2">
         {universities.map((u, idx) => (

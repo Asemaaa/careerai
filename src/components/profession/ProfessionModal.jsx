@@ -22,25 +22,25 @@ export default function ProfessionModal({ profession, onClose }) {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
         >
-          <button type="button" className="absolute inset-0 bg-slate-950/85 backdrop-blur-md" aria-label="Закрыть" onClick={onClose} />
+          <button type="button" className="absolute inset-0 bg-navy-950/90 backdrop-blur-xl" aria-label="Закрыть" onClick={onClose} />
 
           <motion.div
             role="dialog"
             aria-modal="true"
             aria-labelledby="profession-title"
-            className="relative z-10 max-h-[92vh] w-full max-w-3xl overflow-y-auto rounded-t-3xl border border-white/10 bg-slate-950/95 shadow-glow sm:rounded-3xl"
+            className="relative z-10 max-h-[92vh] w-full max-w-3xl overflow-hidden rounded-t-5xl border border-white/[0.1] bg-navy-900/95 shadow-glow-lg backdrop-blur-3xl sm:rounded-5xl"
             initial={{ y: 48, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: 32, opacity: 0 }}
             transition={{ type: 'spring', stiffness: 260, damping: 28 }}
           >
-            <ProfessionVisual category={profession.category} className="rounded-t-3xl" />
+            <ProfessionVisual category={profession.category} className="rounded-t-5xl sm:rounded-t-5xl" />
 
-            <div className="p-6 sm:p-8">
+            <div className="max-h-[60vh] overflow-y-auto p-8 sm:p-10 lg:p-12">
               <div className="flex items-start justify-between gap-4">
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-indigo-300/90">Профиль профессии</p>
-                  <h2 id="profession-title" className="mt-2 font-display text-2xl font-semibold text-white sm:text-3xl">
+                  <p className="badge-pill mb-3 w-fit text-[10px]">Профиль профессии</p>
+                  <h2 id="profession-title" className="font-display text-3xl font-semibold tracking-tight text-white sm:text-4xl">
                     {profession.title}
                   </h2>
                   <p className="mt-2 text-sm text-slate-300">{profession.shortDescription}</p>
@@ -48,7 +48,7 @@ export default function ProfessionModal({ profession, onClose }) {
                 <button
                   type="button"
                   onClick={onClose}
-                  className="rounded-xl border border-white/10 bg-white/5 p-2 text-slate-200 transition hover:bg-white/10"
+                  className="rounded-2xl border border-white/[0.1] bg-white/[0.05] p-2.5 text-slate-200 transition hover:bg-white/10 hover:shadow-glow"
                   aria-label="Закрыть окно"
                 >
                   <X className="h-5 w-5" />
@@ -63,9 +63,9 @@ export default function ProfessionModal({ profession, onClose }) {
               </div>
 
               <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                  <p className="text-xs font-semibold uppercase tracking-wide text-slate-400">Зарплата в Казахстане</p>
-                  <p className="mt-2 text-lg font-semibold text-white">{formatKzt(profession.salaryMin, profession.salaryMax)}</p>
+                <div className="rounded-3xl border border-white/[0.08] bg-white/[0.04] p-5">
+                  <p className="text-xs font-semibold uppercase tracking-widest text-slate-500">Зарплата в Казахстане</p>
+                  <p className="mt-3 font-display text-xl font-semibold text-white">{formatKzt(profession.salaryMin, profession.salaryMax)}</p>
                   <p className="mt-1 text-xs text-slate-400">{demandLabel(profession.demand)}</p>
                 </div>
                 <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
@@ -117,14 +117,14 @@ export default function ProfessionModal({ profession, onClose }) {
                 <h3 className="text-sm font-semibold text-white">Дорожная карта</h3>
                 <div className="space-y-3">
                   {profession.roadmap.map((step) => (
-                    <motion.div key={step.phase} className="rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-transparent p-4">
-                      <p className="text-xs font-semibold uppercase tracking-wide text-indigo-200">{step.phase}</p>
+                    <div key={step.phase} className="rounded-3xl border border-white/[0.06] bg-sky-500/[0.04] p-5">
+                      <p className="text-xs font-semibold uppercase tracking-widest text-sky-300/90">{step.phase}</p>
                       <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-slate-200">
                         {step.items.map((item) => (
                           <li key={item}>{item}</li>
                         ))}
                       </ul>
-                    </motion.div>
+                    </div>
                   ))}
                 </div>
               </div>

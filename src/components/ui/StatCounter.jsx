@@ -9,7 +9,7 @@ export default function StatCounter({ value, suffix = '', label }) {
   useEffect(() => {
     if (!inView) return;
     const target = typeof value === 'number' ? value : parseInt(String(value).replace(/\D/g, ''), 10) || 0;
-    const duration = 1400;
+    const duration = 1600;
     const start = performance.now();
     const tick = (now) => {
       const p = Math.min(1, (now - start) / duration);
@@ -20,16 +20,16 @@ export default function StatCounter({ value, suffix = '', label }) {
   }, [inView, value]);
 
   return (
-    <div ref={ref} className="text-center">
+    <div ref={ref} className="rounded-3xl border border-white/[0.06] bg-white/[0.03] p-6 text-center backdrop-blur-sm">
       <motion.p
-        className="font-display text-3xl font-bold text-white sm:text-4xl"
+        className="font-display text-4xl font-bold tracking-tight sm:text-5xl"
         initial={{ opacity: 0, y: 8 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
       >
-        <span className="text-gradient">{display.toLocaleString('ru-KZ')}</span>
-        {suffix}
+        <span className="text-gradient-blue">{display.toLocaleString('ru-KZ')}</span>
+        <span className="text-sky-400/80">{suffix}</span>
       </motion.p>
-      <p className="mt-1 text-sm text-slate-400">{label}</p>
+      <p className="mt-2 text-sm font-medium text-slate-500">{label}</p>
     </div>
   );
 }

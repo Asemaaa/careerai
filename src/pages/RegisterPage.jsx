@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import cities from '../data/cities.json';
 import GlassCard from '../components/ui/GlassCard.jsx';
+import PageHeader from '../components/ui/PageHeader.jsx';
 import Button from '../components/ui/Button.jsx';
 import { STORAGE_KEYS } from '../utils/careerEngine.js';
 
@@ -35,11 +36,11 @@ export default function RegisterPage() {
 
   return (
     <div className="mx-auto max-w-xl space-y-8">
-      <header>
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-indigo-300/90">Аккаунт</p>
-        <h1 className="mt-2 font-display text-3xl font-semibold text-white">Регистрация</h1>
-        <p className="mt-2 text-sm text-slate-400">Данные сохраняются локально в браузере (демо). Подключите API для продакшена.</p>
-      </header>
+      <PageHeader
+        eyebrow="Onboarding"
+        title="Регистрация"
+        subtitle="Создайте профиль для записи на туры и сохранения результатов теста."
+      />
 
       {done ? (
         <GlassCard className="text-center">
@@ -67,7 +68,7 @@ export default function RegisterPage() {
                 required
                 value={form.fullName}
                 onChange={onChange}
-                className="mt-1 w-full rounded-xl border border-white/10 bg-slate-950/80 px-4 py-2.5 text-sm text-white outline-none ring-indigo-500/30 focus:ring-2"
+                className="input-premium mt-2"
                 placeholder="Иванов Иван Иванович"
               />
             </div>
@@ -85,7 +86,7 @@ export default function RegisterPage() {
                   required
                   value={form.age}
                   onChange={onChange}
-                  className="mt-1 w-full rounded-xl border border-white/10 bg-slate-950/80 px-4 py-2.5 text-sm text-white outline-none focus:ring-2 focus:ring-indigo-500/40"
+                  className="input-premium mt-2"
                 />
               </div>
               <div>
@@ -97,7 +98,7 @@ export default function RegisterPage() {
                   name="cityId"
                   value={form.cityId}
                   onChange={onChange}
-                  className="mt-1 w-full rounded-xl border border-white/10 bg-slate-950/80 px-4 py-2.5 text-sm text-white outline-none focus:ring-2 focus:ring-indigo-500/40"
+                  className="input-premium mt-2"
                 >
                   {cities.map((c) => (
                     <option key={c.id} value={c.id}>
@@ -117,7 +118,7 @@ export default function RegisterPage() {
                 required
                 value={form.school}
                 onChange={onChange}
-                className="mt-1 w-full rounded-xl border border-white/10 bg-slate-950/80 px-4 py-2.5 text-sm text-white outline-none focus:ring-2 focus:ring-indigo-500/40"
+                className="input-premium mt-2"
                 placeholder="Например, школа №12, Уральск"
               />
             </div>
@@ -132,7 +133,7 @@ export default function RegisterPage() {
                 required
                 value={form.phone}
                 onChange={onChange}
-                className="mt-1 w-full rounded-xl border border-white/10 bg-slate-950/80 px-4 py-2.5 text-sm text-white outline-none focus:ring-2 focus:ring-indigo-500/40"
+                className="input-premium mt-2"
                 placeholder="+7 7XX XXX XX XX"
               />
             </div>
@@ -147,7 +148,7 @@ export default function RegisterPage() {
                 required
                 value={form.email}
                 onChange={onChange}
-                className="mt-1 w-full rounded-xl border border-white/10 bg-slate-950/80 px-4 py-2.5 text-sm text-white outline-none focus:ring-2 focus:ring-indigo-500/40"
+                className="input-premium mt-2"
                 placeholder="you@mail.kz"
               />
             </div>

@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import demandByCity from '../data/demandByCity.json';
 import professions from '../data/professions.json';
 import GlassCard from '../components/ui/GlassCard.jsx';
+import PageHeader from '../components/ui/PageHeader.jsx';
 import DemandBadge from '../components/ui/DemandBadge.jsx';
 import ProfessionModal from '../components/profession/ProfessionModal.jsx';
 import { formatKzt, demandLabel, growthLabel, getCityName } from '../utils/careerEngine.js';
@@ -21,33 +22,29 @@ export default function DemandedProfessionsPage() {
   }, [city]);
 
   return (
-    <div className="space-y-8">
-      <header className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-indigo-300/90">Рынок труда</p>
-          <h1 className="mt-2 font-display text-3xl font-semibold text-white sm:text-4xl">Востребованные профессии по городам</h1>
-          <p className="mt-2 max-w-2xl text-sm text-slate-300 sm:text-base">
-            Ориентиры по зарплатам в ₸ и уровню спроса для MVP CareerAI. Уральск и регионы ЗКО — с учётом местной экономики; агломерации — усиленный IT и сервисы.
-          </p>
-        </div>
-        <div className="flex flex-col gap-2 text-sm">
-          <label htmlFor="city" className="text-xs font-semibold uppercase tracking-wide text-slate-400">
-            Город
-          </label>
-          <select
-            id="city"
-            value={cityId}
-            onChange={(e) => setCityId(e.target.value)}
-            className="rounded-xl border border-white/10 bg-slate-950/70 px-3 py-2.5 text-sm text-white outline-none ring-indigo-400/40 focus:ring-2"
-          >
+    <div className="space-y-12">
+      <PageHeader
+        eyebrow="Market Intelligence"
+        title="Спрос по городам"
+        subtitle="Зарплатные коридоры в ₸ и уровень спроса — Уральск, Алматы, Астана и другие города РК."
+      />
+      <div className="mb-10 flex flex-col gap-2 sm:max-w-xs">
+        <label htmlFor="city" className="text-xs font-semibold uppercase tracking-widest text-slate-500">
+          Город
+        </label>
+        <select
+          id="city"
+          value={cityId}
+          onChange={(e) => setCityId(e.target.value)}
+          className="input-premium"
+        >
             {demandByCity.map((c) => (
               <option key={c.cityId} value={c.cityId}>
                 {getCityName(c.cityId)}
               </option>
             ))}
           </select>
-        </div>
-      </header>
+      </div>
 
       {city.highlights?.length > 0 && (
         <div className="flex flex-wrap gap-2">

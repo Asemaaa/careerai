@@ -5,6 +5,7 @@ import tours from '../data/tours.json';
 import weeklyProgram from '../data/weeklyProgram.json';
 import professions from '../data/professions.json';
 import GlassCard from '../components/ui/GlassCard.jsx';
+import PageHeader from '../components/ui/PageHeader.jsx';
 import Button from '../components/ui/Button.jsx';
 import { formatKztSingle, getCityName } from '../utils/careerEngine.js';
 
@@ -35,15 +36,13 @@ export default function CareerToursPage() {
 
   return (
     <div className="space-y-12">
-      <header>
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-indigo-300/90">Полевые программы</p>
-        <h1 className="mt-2 font-display text-3xl font-semibold text-white sm:text-4xl">Профтуры и экскурсии</h1>
-        <p className="mt-2 max-w-2xl text-sm text-slate-300 sm:text-base">
-          Реальные форматы для Казахстана: Департамент полиции ЗКО, ЗКУ, школы Уральска, больницы, МЧС, нефтегаз Атырау, Astana Hub. Цены в тенге — ориентир для MVP.
-        </p>
-      </header>
+      <PageHeader
+        eyebrow="Field Programs"
+        title="Профтуры и экскурсии"
+        subtitle="IT, медицина, полиция ЗКО, вузы, МЧС, нефтегаз — реальные организации Казахстана."
+      />
 
-      <GlassCard className="border-indigo-500/20 bg-gradient-to-br from-indigo-500/10 to-transparent">
+      <GlassCard variant="large" className="!border-sky-500/20 !bg-gradient-to-br !from-sky-500/10 !to-transparent !shadow-glow-lg">
         <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
           <div>
             <h2 className="font-display text-2xl font-semibold text-white">{weeklyProgram.title}</h2>

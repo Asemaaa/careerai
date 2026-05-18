@@ -2,28 +2,98 @@
 @tailwind components;
 @tailwind utilities;
 
-/* App-wide base tweaks for a polished dark UI */
 @layer base {
   html {
     scroll-behavior: smooth;
   }
   body {
-    @apply min-h-screen bg-slate-950 text-slate-100;
+    @apply min-h-screen bg-navy-950 font-sans text-slate-100 antialiased;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
   }
   ::selection {
-    @apply bg-indigo-500/40 text-white;
+    @apply bg-sky-500/30 text-white;
+  }
+}
+
+@layer components {
+  /* Premium glass panel */
+  .glass {
+    @apply rounded-3xl border border-white/[0.08] bg-white/[0.04] shadow-glass backdrop-blur-2xl;
+  }
+
+  .glass-lg {
+    @apply rounded-4xl border border-white/[0.1] bg-white/[0.05] shadow-glass-lg backdrop-blur-3xl;
+  }
+
+  .glass-hover {
+    @apply transition-all duration-500 ease-out;
+  }
+  .glass-hover:hover {
+    @apply -translate-y-1 border-white/[0.14] bg-white/[0.07] shadow-glow-lg;
+  }
+
+  /* Gradient border wrapper */
+  .gradient-border {
+    @apply relative rounded-4xl p-[1px];
+    background: linear-gradient(
+      135deg,
+      rgba(56, 189, 248, 0.45) 0%,
+      rgba(59, 130, 246, 0.15) 35%,
+      rgba(255, 255, 255, 0.12) 50%,
+      rgba(59, 130, 246, 0.15) 65%,
+      rgba(56, 189, 248, 0.35) 100%
+    );
+  }
+  .gradient-border-inner {
+    @apply h-full w-full rounded-[calc(2rem-1px)] bg-navy-900/90 backdrop-blur-2xl;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-sky-200 via-white to-sky-300 bg-clip-text text-transparent;
+  }
+
+  .text-gradient-blue {
+    @apply bg-gradient-to-br from-sky-300 via-sky-100 to-blue-200 bg-clip-text text-transparent;
+  }
+
+  .badge-pill {
+    @apply inline-flex items-center gap-2 rounded-full border border-sky-400/20 bg-sky-500/10 px-4 py-1.5 text-xs font-medium tracking-wide text-sky-100/90 backdrop-blur-md;
+  }
+
+  .section-slide {
+    @apply relative overflow-hidden rounded-5xl border border-white/[0.06] bg-navy-900/40 p-8 shadow-glass-lg backdrop-blur-xl sm:p-12 lg:p-16;
+  }
+
+  .input-premium {
+    @apply w-full rounded-2xl border border-white/[0.08] bg-navy-950/60 px-4 py-3 text-sm text-white shadow-inner transition duration-300 placeholder:text-slate-500 focus:border-sky-400/40 focus:bg-navy-900/80 focus:outline-none focus:ring-2 focus:ring-sky-500/20;
+  }
+
+  .bento-cell {
+    @apply glass glass-hover flex flex-col overflow-hidden rounded-4xl;
+  }
+
+  .icon-ring {
+    @apply flex h-12 w-12 items-center justify-center rounded-2xl border border-sky-400/20 bg-gradient-to-br from-sky-500/20 to-blue-600/10 text-sky-200 shadow-glow;
+  }
+
+  .orb {
+    @apply pointer-events-none absolute rounded-full blur-3xl;
   }
 }
 
 @layer utilities {
-  .glass {
-    @apply border border-white/10 bg-white/5 backdrop-blur-xl shadow-glass;
+  .animate-in-view {
+    animation: fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
-  .glass-hover {
-    /* Avoid arbitrary opacity inside @apply (breaks Tailwind/PostCSS in many setups). */
-    @apply transition duration-300 hover:border-white/20 hover:bg-white/10 hover:shadow-glow hover:-translate-y-0.5;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
   }
-  .text-gradient {
-    @apply bg-gradient-to-r from-indigo-300 via-sky-300 to-fuchsia-300 bg-clip-text text-transparent;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

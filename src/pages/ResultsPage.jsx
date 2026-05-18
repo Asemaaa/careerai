@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { RefreshCcw, ArrowRight } from 'lucide-react';
 import Button from '../components/ui/Button.jsx';
 import GlassCard from '../components/ui/GlassCard.jsx';
+import PageHeader from '../components/ui/PageHeader.jsx';
 import DemandBadge from '../components/ui/DemandBadge.jsx';
 import ProfessionModal from '../components/profession/ProfessionModal.jsx';
 import { recommendProfessions, formatKzt, growthLabel, STORAGE_KEYS } from '../utils/careerEngine.js';
@@ -39,32 +40,29 @@ export default function ResultsPage() {
   const primary = topProfessions[0];
 
   return (
-    <div className="space-y-10">
-      <header className="flex flex-col justify-between gap-4 lg:flex-row lg:items-end">
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-indigo-300/90">Результаты теста</p>
-          <h1 className="mt-2 font-display text-3xl font-semibold text-white sm:text-4xl">Ваши рекомендации CareerAI</h1>
-          <p className="mt-2 max-w-2xl text-sm text-slate-300 sm:text-base">
-            {answers.length
-              ? 'Модель сопоставляет ваши ответы с профилями профессий (веса навыков и черт личности). Данные — демонстрационные, при подключении API можно заменить на ML.'
-              : 'Вы открыли страницу без прохождения теста — показан демонстрационный топ профессий для Казахстана. Пройдите тест для персонализации.'}
-          </p>
-        </div>
+    <div className="space-y-16">
+      <PageHeader
+        eyebrow="Результаты AI-анализа"
+        title="Ваши рекомендации"
+        subtitle={
+          answers.length
+            ? 'Персональный топ профессий на основе 20 ответов.'
+            : 'Демо-результат — пройдите тест для персонализации.'
+        }
+      >
         <div className="flex flex-wrap gap-3">
           <Button to="/career-test" variant="ghost">
-            <span className="inline-flex items-center gap-2">
-              <RefreshCcw className="h-4 w-4" />
-              Пройти заново
-            </span>
+            <RefreshCcw className="h-4 w-4" />
+            Пройти заново
           </Button>
           <Button to="/booking">Записаться на программу</Button>
         </div>
-      </header>
+      </PageHeader>
 
       {primary && (
         <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.45 }}>
-          <GlassCard className="relative overflow-hidden">
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-indigo-600/20 via-transparent to-fuchsia-500/10" />
+          <GlassCard variant="large" noHover className="relative overflow-hidden !shadow-glow-lg">
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-sky-500/15 via-transparent to-blue-600/10" />
             <div className="relative flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-wide text-indigo-200">Топ-совпадение</p>
@@ -102,7 +100,7 @@ export default function ResultsPage() {
                 key={p.id}
                 type="button"
                 onClick={() => setModalProfession(p)}
-                className="rounded-2xl border border-white/10 bg-slate-950/50 p-4 text-left transition hover:border-indigo-400/50 hover:bg-slate-900/80"
+                className="rounded-3xl border border-white/[0.08] bg-white/[0.02] p-5 text-left transition-all duration-300 hover:border-sky-400/30 hover:bg-sky-500/[0.06] hover:shadow-glow"
               >
                 <div className="flex items-center justify-between gap-2">
                   <span className="text-xs font-semibold text-slate-500">#{idx + 1}</span>

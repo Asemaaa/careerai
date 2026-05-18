@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import professions from '../data/professions.json';
 import categories from '../data/categories.json';
 import GlassCard from '../components/ui/GlassCard.jsx';
+import PageHeader from '../components/ui/PageHeader.jsx';
 import ProfessionModal from '../components/profession/ProfessionModal.jsx';
 import ProfessionVisual from '../components/ui/ProfessionVisual.jsx';
 import DemandBadge from '../components/ui/DemandBadge.jsx';
@@ -18,32 +19,23 @@ export default function ProfessionsPage() {
   }, [cat]);
 
   return (
-    <div className="space-y-10">
-      <header>
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-indigo-300/90">Каталог</p>
-        <h1 className="mt-2 font-display text-3xl font-semibold text-white sm:text-4xl">Профессии в Казахстане</h1>
-        <p className="mt-2 max-w-2xl text-sm text-slate-300 sm:text-base">
-          Реалистичные описания, зарплаты в тенге, спрос, условия работы и связка с вузами. Данные для MVP — редактируйте JSON под партнёров.
-        </p>
-      </header>
+    <div className="space-y-12">
+      <PageHeader
+        eyebrow="Каталог · 29+ профессий"
+        title="Профессии Казахстана"
+        subtitle="Премиальные карточки с зарплатами в ₸, спросом, дорожными картами и связью с вузами."
+      />
 
       <div className="flex flex-wrap gap-2">
-        <button
-          type="button"
-          onClick={() => setCat('all')}
-          className={`rounded-full px-4 py-2 text-sm font-medium transition ${
-            cat === 'all' ? 'bg-indigo-500 text-white shadow-glow' : 'bg-white/5 text-slate-300 ring-1 ring-white/10 hover:bg-white/10'
-          }`}
-        >
-          Все
-        </button>
-        {categories.map((c) => (
+        {[{ id: 'all', label: 'Все' }, ...categories].map((c) => (
           <button
             key={c.id}
             type="button"
             onClick={() => setCat(c.id)}
-            className={`rounded-full px-4 py-2 text-sm font-medium transition ${
-              cat === c.id ? 'bg-indigo-500 text-white shadow-glow' : 'bg-white/5 text-slate-300 ring-1 ring-white/10 hover:bg-white/10'
+            className={`rounded-full px-5 py-2.5 text-sm font-medium tracking-tight transition-all duration-300 ${
+              cat === c.id
+                ? 'bg-gradient-to-r from-sky-400 to-blue-600 text-white shadow-glow'
+                : 'border border-white/[0.08] bg-white/[0.03] text-slate-400 hover:border-sky-400/25 hover:text-white'
             }`}
           >
             {c.label}
@@ -54,7 +46,7 @@ export default function ProfessionsPage() {
       <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
         {filtered.map((p, idx) => (
           <motion.div key={p.id} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: idx * 0.03 }}>
-            <GlassCard className="flex h-full flex-col gap-4 p-0 overflow-hidden">
+            <GlassCard className="flex h-full flex-col gap-0 overflow-hidden !p-0">
               <ProfessionVisual category={p.category} className="rounded-none" />
               <div className="flex flex-1 flex-col gap-3 px-6 pb-6">
                 <div className="flex flex-wrap gap-2">
@@ -64,7 +56,7 @@ export default function ProfessionsPage() {
                 <h2 className="font-display text-lg font-semibold text-white">{p.title}</h2>
                 <p className="text-sm text-slate-400">{p.shortDescription}</p>
                 <p className="mt-auto text-sm font-semibold text-white">{formatKzt(p.salaryMin, p.salaryMax)}</p>
-                <button type="button" onClick={() => setModalProfession(p)} className="text-left text-sm font-semibold text-indigo-300 hover:text-indigo-200">
+                <button type="button" onClick={() => setModalProfession(p)} className="text-left text-sm font-semibold text-sky-300 transition hover:text-sky-200">
                   Открыть карточку →
                 </button>
               </div>

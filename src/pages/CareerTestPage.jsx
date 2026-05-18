@@ -6,6 +6,7 @@ import questions from '../data/careerQuestions.json';
 import Button from '../components/ui/Button.jsx';
 import ProgressBar from '../components/ui/ProgressBar.jsx';
 import GlassCard from '../components/ui/GlassCard.jsx';
+import PageHeader from '../components/ui/PageHeader.jsx';
 import { STORAGE_KEYS } from '../utils/careerEngine.js';
 
 export default function CareerTestPage() {
@@ -31,14 +32,11 @@ export default function CareerTestPage() {
     });
   }, [answers]);
 
-  const handleSelect = (optionId) => {
-    setAnswers((prev) => ({ ...prev, [current.id]: optionId }));
-  };
+  const handleSelect = (optionId) => setAnswers((prev) => ({ ...prev, [current.id]: optionId }));
 
   const goNext = () => {
-    if (step < questions.length - 1) {
-      setStep((s) => s + 1);
-    } else {
+    if (step < questions.length - 1) setStep((s) => s + 1);
+    else {
       const filled = summaryPayload.filter((row) => row.optionId);
       try {
         sessionStorage.setItem(STORAGE_KEYS.answers, JSON.stringify(filled));
@@ -49,27 +47,20 @@ export default function CareerTestPage() {
     }
   };
 
-  const goPrev = () => {
-    if (step > 0) setStep((s) => s - 1);
-  };
-
   return (
-    <div className="mx-auto max-w-3xl space-y-8">
-      <header className="space-y-3 text-center sm:text-left">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-indigo-300/90">Профориентация CareerAI</p>
-        <h1 className="font-display text-3xl font-semibold text-white sm:text-4xl">Профессиональный тест</h1>
-        <p className="text-sm text-slate-300 sm:text-base">
-          20 вопросов о лидерстве, креативности, логике, эмпатии, командной работе и стрессоустойчивости. Отвечайте честно — алгоритм
-          сопоставит ваш профиль с профессиями в Казахстане.
-        </p>
-      </header>
+    <div className="mx-auto max-w-4xl">
+      <PageHeader
+        eyebrow="Профориентация · 20 вопросов"
+        title="Профессиональный тест"
+        subtitle="Анализ лидерства, креативности, логики, эмпатии и карьерных интересов — с рекомендациями для рынка Казахстана."
+      />
 
-      <div className="space-y-2">
-        <div className="flex items-center justify-between text-xs text-slate-400">
+      <div className="mb-10 space-y-3">
+        <div className="flex justify-between text-xs font-medium uppercase tracking-widest text-slate-500">
           <span>
-            Вопрос {step + 1} из {questions.length}
+            Вопрос {step + 1} / {questions.length}
           </span>
-          <span>{Math.round(progress * 100)}%</span>
+          <span className="text-sky-400/80">{Math.round(progress * 100)}%</span>
         </div>
         <ProgressBar value={progress} />
       </div>
@@ -77,14 +68,14 @@ export default function CareerTestPage() {
       <AnimatePresence mode="wait">
         <motion.div
           key={current.id}
-          initial={{ opacity: 0, x: 28 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -28 }}
-          transition={{ duration: 0.35 }}
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -16 }}
+          transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
         >
-          <GlassCard className="space-y-6">
-            <h2 className="text-lg font-semibold text-white sm:text-xl">{current.question}</h2>
-            <div className="grid gap-3 sm:grid-cols-2">
+          <GlassCard variant="large" noHover className="!shadow-glow-lg">
+            <h2 className="font-display text-2xl font-semibold leading-snug tracking-tight text-white sm:text-3xl">{current.question}</h2>
+            <div className="mt-10 grid gap-3 sm:grid-cols-2">
               {current.options.map((opt) => {
                 const active = answers[current.id] === opt.id;
                 return (
@@ -92,14 +83,16 @@ export default function CareerTestPage() {
                     key={opt.id}
                     type="button"
                     onClick={() => handleSelect(opt.id)}
-                    className={`rounded-2xl border px-4 py-3 text-left text-sm transition duration-300 ${
+                    className={`group rounded-3xl border px-5 py-4 text-left transition-all duration-300 ${
                       active
-                        ? 'border-indigo-400/70 bg-indigo-500/20 text-white shadow-glow'
-                        : 'border-white/10 bg-slate-950/50 text-slate-100 hover:border-white/25 hover:bg-slate-900/70'
+                        ? 'border-sky-400/50 bg-sky-500/15 shadow-glow'
+                        : 'border-white/[0.08] bg-white/[0.02] hover:border-sky-400/25 hover:bg-white/[0.05] hover:shadow-glow'
                     }`}
                   >
-                    <span className="block text-xs font-semibold uppercase tracking-wide text-slate-500">Вариант {opt.id}</span>
-                    <span className="mt-1 block leading-snug">{opt.label}</span>
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-slate-500 group-hover:text-sky-400/80">
+                      {opt.id}
+                    </span>
+                    <span className="mt-2 block text-sm leading-relaxed text-slate-200">{opt.label}</span>
                   </button>
                 );
               })}
@@ -108,18 +101,14 @@ export default function CareerTestPage() {
         </motion.div>
       </AnimatePresence>
 
-      <div className="flex flex-col-reverse gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <Button variant="ghost" onClick={goPrev} disabled={step === 0}>
-          <span className="inline-flex items-center gap-2">
-            <ChevronLeft className="h-4 w-4" />
-            Назад
-          </span>
+      <div className="mt-10 flex flex-col-reverse gap-4 sm:flex-row sm:justify-between">
+        <Button variant="ghost" onClick={() => setStep((s) => Math.max(0, s - 1))} disabled={step === 0}>
+          <ChevronLeft className="h-4 w-4" />
+          Назад
         </Button>
         <Button onClick={goNext} disabled={!canGoNext}>
-          <span className="inline-flex items-center gap-2">
-            {step === questions.length - 1 ? 'Получить рекомендации' : 'Далее'}
-            <ChevronRight className="h-4 w-4" />
-          </span>
+          {step === questions.length - 1 ? 'Получить рекомендации' : 'Далее'}
+          <ChevronRight className="h-4 w-4" />
         </Button>
       </div>
     </div>
