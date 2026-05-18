@@ -5,10 +5,10 @@ const tone = {
 };
 
 export default function DemandBadge({ level }) {
-  const label = level === 'high' ? 'High' : level === 'medium' ? 'Medium' : 'Low';
+  const label = level === 'high' ? 'Высокий' : level === 'medium' ? 'Средний' : 'Низкий';
   return (
     <span className={`inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold ${tone[level] || tone.medium}`}>
-      Demand: {label}
+      Спрос: {label}
     </span>
   );
 }

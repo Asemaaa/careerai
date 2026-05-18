@@ -1,52 +1,202 @@
 [
   {
     "id": "q1",
-    "question": "What kind of problems do you enjoy solving the most?",
+    "question": "Как вы предпочитаете решать сложную задачу?",
     "options": [
-      { "id": "a", "label": "Logical puzzles, algorithms, and systems", "tags": ["tech", "analytical"] },
-      { "id": "b", "label": "People dynamics, communication, and motivation", "tags": ["people", "business"] },
-      { "id": "c", "label": "Visual stories, aesthetics, and brand feel", "tags": ["creative", "design"] },
-      { "id": "d", "label": "Hands-on building, fixing, and optimizing things", "tags": ["engineering", "practical"] }
+      { "id": "a", "label": "Разобрать по шагам и найти логичное решение", "traits": { "logic": 3, "analytical": 2 } },
+      { "id": "b", "label": "Обсудить с командой и услышать разные мнения", "traits": { "teamwork": 3, "communication": 2 } },
+      { "id": "c", "label": "Придумать нестандартный творческий подход", "traits": { "creativity": 3, "leadership": 1 } },
+      { "id": "d", "label": "Взять ответственность и организовать процесс", "traits": { "leadership": 3, "organization": 2 } }
     ]
   },
   {
     "id": "q2",
-    "question": "In a team project, you naturally gravitate toward…",
+    "question": "Что вас больше мотивирует в учёбе или работе?",
     "options": [
-      { "id": "a", "label": "Owning the roadmap and keeping everyone aligned", "tags": ["business", "people"] },
-      { "id": "b", "label": "Researching deeply and validating assumptions", "tags": ["analytical", "tech"] },
-      { "id": "c", "label": "Crafting the experience users will remember", "tags": ["creative", "design"] },
-      { "id": "d", "label": "Making sure the final output is reliable and polished", "tags": ["engineering", "practical"] }
+      { "id": "a", "label": "Помогать людям и видеть благодарность", "traits": { "empathy": 3, "people": 3 } },
+      { "id": "b", "label": "Создавать что-то новое и красивое", "traits": { "creativity": 3, "technical": 1 } },
+      { "id": "c", "label": "Разбираться в технологиях и системах", "traits": { "technical": 3, "logic": 2 } },
+      { "id": "d", "label": "Достигать измеримых результатов и целей", "traits": { "analytical": 2, "discipline": 2, "organization": 2 } }
     ]
   },
   {
     "id": "q3",
-    "question": "Which learning style fits you best?",
+    "question": "Как вы ведёте себя в групповом проекте?",
     "options": [
-      { "id": "a", "label": "Structured courses with clear milestones", "tags": ["analytical", "tech"] },
-      { "id": "b", "label": "Learning by doing with fast feedback loops", "tags": ["engineering", "creative"] },
-      { "id": "c", "label": "Mentorship, shadowing, and real conversations", "tags": ["people", "business"] },
-      { "id": "d", "label": "Exploring trends and experimenting freely", "tags": ["creative", "design"] }
+      { "id": "a", "label": "Становлюсь координатором и распределяю роли", "traits": { "leadership": 3, "organization": 2 } },
+      { "id": "b", "label": "Поддерживаю атмосферу и помогаю каждому", "traits": { "empathy": 2, "teamwork": 3, "people": 2 } },
+      { "id": "c", "label": "Делаю аналитику, расчёты и структуру", "traits": { "analytical": 3, "logic": 2 } },
+      { "id": "d", "label": "Беру техническую или творческую часть", "traits": { "technical": 2, "creativity": 2 } }
     ]
   },
   {
     "id": "q4",
-    "question": "Pick a workspace vibe that energizes you:",
+    "question": "Какой предмет в школе вам давался легче всего?",
     "options": [
-      { "id": "a", "label": "Quiet focus with headphones and deep work", "tags": ["tech", "analytical"] },
-      { "id": "b", "label": "Collaborative whiteboards and brainstorms", "tags": ["people", "creative"] },
-      { "id": "c", "label": "Fast-paced deadlines with visible impact", "tags": ["business", "engineering"] },
-      { "id": "d", "label": "Studio-like space with prototypes everywhere", "tags": ["design", "creative"] }
+      { "id": "a", "label": "Математика или информатика", "traits": { "logic": 3, "technical": 2, "analytical": 2 } },
+      { "id": "b", "label": "Языки и литература", "traits": { "communication": 3, "creativity": 2 } },
+      { "id": "c", "label": "Биология, химия или физика", "traits": { "analytical": 2, "discipline": 2, "logic": 2 } },
+      { "id": "d", "label": "История, обществознание", "traits": { "communication": 2, "people": 2, "analytical": 1 } }
     ]
   },
   {
     "id": "q5",
-    "question": "Two years from now, what outcome would make you proud?",
+    "question": "Как вы реагируете на стресс и дедлайны?",
     "options": [
-      { "id": "a", "label": "Shipping products used by thousands of people", "tags": ["tech", "engineering"] },
-      { "id": "b", "label": "Leading initiatives that move metrics", "tags": ["business", "analytical"] },
-      { "id": "c", "label": "Winning awards or recognition for craft", "tags": ["design", "creative"] },
-      { "id": "d", "label": "Helping others grow through coaching or community", "tags": ["people", "business"] }
+      { "id": "a", "label": "Сохраняю хладнокровие и действую по плану", "traits": { "stress": 3, "discipline": 2, "organization": 2 } },
+      { "id": "b", "label": "Волнуюсь, но справляюсь с поддержкой команды", "traits": { "teamwork": 2, "empathy": 1, "stress": 1 } },
+      { "id": "c", "label": "Лучше работаю под небольшим давлением", "traits": { "stress": 2, "leadership": 1 } },
+      { "id": "d", "label": "Предпочитаю спокойный ритм без авралов", "traits": { "organization": 2, "creativity": 1 } }
+    ]
+  },
+  {
+    "id": "q6",
+    "question": "Что вам интереснее в свободное время?",
+    "options": [
+      { "id": "a", "label": "Программирование, игры, технологии", "traits": { "technical": 3, "logic": 2 } },
+      { "id": "b", "label": "Рисование, музыка, дизайн", "traits": { "creativity": 3 } },
+      { "id": "c", "label": "Спорт, волонтёрство, общение", "traits": { "people": 2, "teamwork": 2, "empathy": 2 } },
+      { "id": "d", "label": "Чтение, документальные фильмы, аналитика", "traits": { "analytical": 2, "logic": 2 } }
+    ]
+  },
+  {
+    "id": "q7",
+    "question": "Как вы относитесь к публичным выступлениям?",
+    "options": [
+      { "id": "a", "label": "Люблю выступать и убеждать аудиторию", "traits": { "communication": 3, "leadership": 2 } },
+      { "id": "b", "label": "Могу выступить, если хорошо подготовлен", "traits": { "communication": 2, "discipline": 2 } },
+      { "id": "c", "label": "Предпочитаю работать за кулисами", "traits": { "technical": 2, "analytical": 2 } },
+      { "id": "d", "label": "Лучше общаюсь один на один", "traits": { "empathy": 2, "people": 2 } }
+    ]
+  },
+  {
+    "id": "q8",
+    "question": "Какой тип деятельности вам ближе?",
+    "options": [
+      { "id": "a", "label": "Работа с людьми: обучение, помощь, консультации", "traits": { "people": 3, "empathy": 2, "communication": 2 } },
+      { "id": "b", "label": "Работа с данными, схемами, кодом", "traits": { "technical": 2, "analytical": 3, "logic": 2 } },
+      { "id": "c", "label": "Работа руками на объекте или в мастерской", "traits": { "technical": 2, "discipline": 2, "stress": 1 } },
+      { "id": "d", "label": "Организация процессов и управление", "traits": { "leadership": 2, "organization": 3 } }
+    ]
+  },
+  {
+    "id": "q9",
+    "question": "Что для вас важнее в будущей профессии?",
+    "options": [
+      { "id": "a", "label": "Стабильность и социальная значимость", "traits": { "discipline": 2, "people": 2 } },
+      { "id": "b", "label": "Высокий доход и карьерный рост", "traits": { "leadership": 2, "analytical": 2 } },
+      { "id": "c", "label": "Творческая свобода и самовыражение", "traits": { "creativity": 3 } },
+      { "id": "d", "label": "Инновации и работа с технологиями", "traits": { "technical": 3, "logic": 2 } }
+    ]
+  },
+  {
+    "id": "q10",
+    "question": "Как вы принимаете важные решения?",
+    "options": [
+      { "id": "a", "label": "Собираю факты и сравниваю варианты", "traits": { "analytical": 3, "logic": 2 } },
+      { "id": "b", "label": "Советуюсь с близкими и наставниками", "traits": { "empathy": 2, "people": 2, "communication": 1 } },
+      { "id": "c", "label": "Доверяю интуиции и опыту", "traits": { "creativity": 2, "leadership": 1 } },
+      { "id": "d", "label": "Следую правилам и инструкциям", "traits": { "discipline": 3, "organization": 2 } }
+    ]
+  },
+  {
+    "id": "q11",
+    "question": "Насколько вам комфортно работать в строгой иерархии?",
+    "options": [
+      { "id": "a", "label": "Комфортно, люблю чёткую структуру", "traits": { "discipline": 3, "organization": 2 } },
+      { "id": "b", "label": "Нормально, если понимаю смысл задач", "traits": { "teamwork": 2, "logic": 1 } },
+      { "id": "c", "label": "Предпочитаю гибкие стартап-команды", "traits": { "creativity": 2, "technical": 2 } },
+      { "id": "d", "label": "Хочу сам влиять на правила", "traits": { "leadership": 3 } }
+    ]
+  },
+  {
+    "id": "q12",
+    "question": "Как вы относитесь к физической активности и выносливости?",
+    "options": [
+      { "id": "a", "label": "Регулярно занимаюсь спортом, это важно", "traits": { "stress": 2, "discipline": 2, "teamwork": 1 } },
+      { "id": "b", "label": "Умеренная активность, без экстрима", "traits": { "organization": 1 } },
+      { "id": "c", "label": "Предпочитаю интеллектуальные нагрузки", "traits": { "analytical": 2, "logic": 2 } },
+      { "id": "d", "label": "Готов(а) к сложным физическим условиям службы", "traits": { "stress": 3, "discipline": 2, "teamwork": 2 } }
+    ]
+  },
+  {
+    "id": "q13",
+    "question": "Что вас больше привлекает в городе Уральск / Казахстане?",
+    "options": [
+      { "id": "a", "label": "Местные вузы и образование", "traits": { "people": 2, "communication": 2 } },
+      { "id": "b", "label": "Нефтегаз и промышленность региона", "traits": { "technical": 2, "discipline": 2 } },
+      { "id": "c", "label": "Госслужба и правопорядок", "traits": { "discipline": 2, "leadership": 1, "stress": 1 } },
+      { "id": "d", "label": "IT и удалённая работа из региона", "traits": { "technical": 3, "creativity": 1 } }
+    ]
+  },
+  {
+    "id": "q14",
+    "question": "Как вы относитесь к рутинной работе?",
+    "options": [
+      { "id": "a", "label": "Спокойно выполняю, если вижу результат", "traits": { "discipline": 3, "organization": 2 } },
+      { "id": "b", "label": "Нужно разнообразие, иначе скучно", "traits": { "creativity": 2, "communication": 1 } },
+      { "id": "c", "label": "Автоматизирую рутину инструментами", "traits": { "technical": 2, "logic": 2 } },
+      { "id": "d", "label": "Делегирую и переключаюсь на стратегию", "traits": { "leadership": 2, "analytical": 2 } }
+    ]
+  },
+  {
+    "id": "q15",
+    "question": "Какой формат обучения вам подходит?",
+    "options": [
+      { "id": "a", "label": "Университет и фундаментальная база", "traits": { "discipline": 2, "analytical": 2 } },
+      { "id": "b", "label": "Колледж и быстрый практический старт", "traits": { "technical": 2, "organization": 1 } },
+      { "id": "c", "label": "Онлайн-курсы и самообучение", "traits": { "technical": 2, "creativity": 1, "logic": 1 } },
+      { "id": "d", "label": "Наставник и стажировка в организации", "traits": { "people": 2, "teamwork": 2 } }
+    ]
+  },
+  {
+    "id": "q16",
+    "question": "Как вы справляетесь с критикой?",
+    "options": [
+      { "id": "a", "label": "Анализирую и улучшаю результат", "traits": { "analytical": 2, "discipline": 2 } },
+      { "id": "b", "label": "Переживаю, но стараюсь понять другую сторону", "traits": { "empathy": 2, "communication": 1 } },
+      { "id": "c", "label": "Использую критику как вызов", "traits": { "leadership": 2, "stress": 2 } },
+      { "id": "d", "label": "Предпочитаю конструктив в письменной форме", "traits": { "logic": 2, "organization": 1 } }
+    ]
+  },
+  {
+    "id": "q17",
+    "question": "Что вам ближе: офис, удалёнка или поле?",
+    "options": [
+      { "id": "a", "label": "Офис / коворкинг с командой", "traits": { "teamwork": 2, "communication": 2 } },
+      { "id": "b", "label": "Удалёнка из любого города Казахстана", "traits": { "technical": 2, "organization": 2 } },
+      { "id": "c", "label": "Выезды, объекты, смены", "traits": { "stress": 2, "discipline": 2, "technical": 1 } },
+      { "id": "d", "label": "Клиника, школа, социальные учреждения", "traits": { "people": 3, "empathy": 2 } }
+    ]
+  },
+  {
+    "id": "q18",
+    "question": "Насколько вам интересен предпринимательский путь?",
+    "options": [
+      { "id": "a", "label": "Хочу открыть своё дело в будущем", "traits": { "leadership": 3, "creativity": 2 } },
+      { "id": "b", "label": "Возможно, но сначала опыт в компании", "traits": { "analytical": 2, "organization": 2 } },
+      { "id": "c", "label": "Предпочитаю стабильную найм-позицию", "traits": { "discipline": 2, "organization": 2 } },
+      { "id": "d", "label": "Социальный проект или НКО", "traits": { "empathy": 2, "people": 2 } }
+    ]
+  },
+  {
+    "id": "q19",
+    "question": "Как вы работаете с деталями?",
+    "options": [
+      { "id": "a", "label": "Замечаю мелочи, это моя сила", "traits": { "analytical": 2, "discipline": 2, "organization": 2 } },
+      { "id": "b", "label": "Вижу общую картину, детали делегирую", "traits": { "leadership": 2, "communication": 2 } },
+      { "id": "c", "label": "Баланс: важное — точно, остальное — быстро", "traits": { "logic": 2, "teamwork": 1 } },
+      { "id": "d", "label": "Детали важны в творческой доводке", "traits": { "creativity": 2, "technical": 1 } }
+    ]
+  },
+  {
+    "id": "q20",
+    "question": "Через 5 лет вы хотите…",
+    "options": [
+      { "id": "a", "label": "Быть экспертом в технической специальности", "traits": { "technical": 3, "logic": 2, "discipline": 1 } },
+      { "id": "b", "label": "Руководить командой или проектом", "traits": { "leadership": 3, "communication": 2 } },
+      { "id": "c", "label": "Помогать людям как врач, учитель, психолог", "traits": { "empathy": 3, "people": 3 } },
+      { "id": "d", "label": "Создавать контент, бренды, медиа", "traits": { "creativity": 3, "communication": 2 } }
     ]
   }
 ]

@@ -1,0 +1,24 @@
+{
+  "title": "Недельная программа «7 профессий — 7 дней»",
+  "subtitle": "Интенсив для школьников и студентов колледжей Казахстана",
+  "price": 28000,
+  "currency": "KZT",
+  "cities": ["uralsk", "almaty", "astana"],
+  "days": [
+    { "day": 1, "theme": "IT и цифровые профессии", "tourId": "tour-it-uralsk" },
+    { "day": 2, "theme": "Медицина и забота о людях", "tourId": "tour-hospital-uralsk" },
+    { "day": 3, "theme": "Правоохранение и безопасность", "tourId": "tour-police-zko" },
+    { "day": 4, "theme": "Образование и педагогика", "tourId": "tour-school-uralsk" },
+    { "day": 5, "theme": "Университет и поступление", "tourId": "tour-zku-campus" },
+    { "day": 6, "theme": "МЧС и экстренные службы", "tourId": "tour-mchs" },
+    { "day": 7, "theme": "Карьерный итог + AI-отчёт", "tourId": null }
+  ],
+  "companiesCount": 5,
+  "includes": [
+    "Сопровождение куратора CareerAI",
+    "Транспорт по программе в городе",
+    "Питание (обед)",
+    "Персональный AI-отчёт по итогам недели",
+    "Сертификат участника"
+  ]
+}

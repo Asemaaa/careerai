@@ -1,0 +1,9 @@
+[
+  { "id": "it", "label": "IT и цифровые технологии", "icon": "cpu" },
+  { "id": "medicine", "label": "Медицина", "icon": "heart-pulse" },
+  { "id": "education", "label": "Образование", "icon": "graduation-cap" },
+  { "id": "government", "label": "Государство и безопасность", "icon": "shield" },
+  { "id": "business", "label": "Бизнес и финансы", "icon": "briefcase" },
+  { "id": "engineering", "label": "Инженерия и промышленность", "icon": "factory" },
+  { "id": "creative", "label": "Творчество и медиа", "icon": "palette" }
+]
